@@ -13,17 +13,20 @@ class Book
     private String title;
     private int pages;
     private String refNumber;
+    private int borrowed;
+    private boolean courseText;
 
     /**
      * Set the author and title fields when this object
      * is constructed.
      */
-    public Book(String bookAuthor, String bookTitle, int bookPages)
+    public Book(String bookAuthor, String bookTitle, int bookPages, int borrowed, boolean courseText)
     {
         author = bookAuthor;
         title = bookTitle;
         pages = bookPages;
         refNumber = "";
+        borrowed = 0;
     }
 
     // Add the methods here ...
@@ -34,7 +37,7 @@ class Book
     System.out.println(title);
 }
     private int getPages(){ //2.85
-    return this.pages;
+    return pages;
 }
     private void printDetails(){ //2.87
     System.out.println("Author: " + author + "Title: " + title + "Pages: " + pages);
@@ -45,11 +48,24 @@ class Book
         }
     
 }
-    public void setRefNumber(String ref){ //2.88
+    public void setRefNumber(String ref){ //2.88 & 2.90
+    if (ref.length() < 3){
+        System.out.println("Reference format incorrect.");
+    }
+    else{
     refNumber = ref;
-
+}
+}
+    public void borrow(){//2.91
+     borrowed = borrowed++;
+}
+    public int getBorrowed(){//2.91
+        return borrowed;
 }
     public String getRefNumber(){ //2.88
     return refNumber;
+}
+    public boolean isCourseText(){//2.92
+    return courseText;
 }
 }
