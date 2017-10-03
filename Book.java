@@ -32,7 +32,11 @@ class Book
     private void printTitle(){ //2.84
     System.out.println(title);
 }
-    public int getPages(){ //2.85
+    private int getPages(){ //2.85
     return this.pages;
+}
+    private void printDetails(){
+    System.out.println("Author: " + author + "Title: " + title + "Pages: " + pages);
+    
 }
 }
