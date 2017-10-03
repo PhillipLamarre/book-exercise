@@ -38,6 +38,11 @@ class Book
 }
     private void printDetails(){ //2.87
     System.out.println("Author: " + author + "Title: " + title + "Pages: " + pages);
+    if(refNumber == ""){
+        System.out.println("ZZZ");
+    }
+        else{System.out.println(refNumber);
+        }
     
 }
     public void setRefNumber(String ref){ //2.88
